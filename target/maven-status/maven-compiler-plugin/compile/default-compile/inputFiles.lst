@@ -1,0 +1,14 @@
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\servlet\LoginServlet.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\servlet\PostServlet.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\servlet\ProfileServlet.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\Dao\PostDAO.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\entity\User.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\Dao\UserDAO.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\servlet\LogoutServlet.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\Dao\exceptions\NonexistentEntityException.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\entity\Commento.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\Dao\CommentoDAO.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\Dao\exceptions\IllegalOrphanException.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\servlet\RegistrazioneServlet.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\entity\Post.java
+C:\Users\Karim\Desktop\Micro_Blog\src\main\java\Dao\exceptions\PreexistingEntityException.java
