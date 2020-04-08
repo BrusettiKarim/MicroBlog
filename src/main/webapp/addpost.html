@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>POST</title>
@@ -9,16 +8,15 @@
     <body>
         <div>
             <br><h3>posta qui quello che vuoi!</h3>
-            <form action="PostServlet" method="post"> 
+            <form action="SavePost" method="POST"> 
                 <p>Inserisci il titolo    
                     <input type="text" name="titolo">
                 </p>
                 <p>Inserisci il post    
-                    <input type="text" name="post">
+                    <input type="text-area" name="post" placeholder="Inserisci il testo...">
                 </p>
                 <input type="submit" name="Salva">
             </form>
         </div>
-
     </body>
 </html>

@@ -29,9 +29,9 @@ public class Commento implements Serializable {
     @Column(nullable = false)
     public String contenuto;
     
-    @ManyToOne(targetEntity = User.class)
+    @ManyToOne(targetEntity = Utente.class)
     @JoinColumn(nullable = false)
-    public User utente;
+    public Utente utente;
     
     @ManyToOne(targetEntity = Post.class)
     @JoinColumn(nullable = false)
@@ -62,11 +62,11 @@ public class Commento implements Serializable {
         this.contenuto = contenuto;
     }
 
-    public User getUtente() {
+    public Utente getUtente() {
         return utente;
     }
 
-    public void setUtente(User utente) {
+    public void setUtente(Utente utente) {
         this.utente = utente;
     }
 

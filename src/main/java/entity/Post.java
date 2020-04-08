@@ -34,9 +34,9 @@ public class Post implements Serializable {
     @Column(nullable = false)
     public String contenuto;
     
-    @ManyToOne(targetEntity = User.class)
-    @JoinColumn(nullable = false, name="USER_USERNAME")
-    public User utente;
+    @ManyToOne(targetEntity = Utente.class)
+    @JoinColumn(nullable = false, name="UTENTE_USERNAME")
+    public Utente utente;
 
 
     public long getId() {
@@ -71,11 +71,11 @@ public class Post implements Serializable {
         this.contenuto = contenuto;
     }
 
-    public User getUtente() {
+    public Utente getUtente() {
         return utente;
     }
 
-    public void setUtente(User utente) {
+    public void setUtente(Utente utente) {
         this.utente = utente;
     }
 

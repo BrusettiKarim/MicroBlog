@@ -7,7 +7,7 @@ package Dao;
 
 import Dao.exceptions.NonexistentEntityException;
 import Dao.exceptions.PreexistingEntityException;
-import entity.User;
+import entity.Utente;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -22,15 +22,15 @@ import javax.persistence.criteria.Root;
  *
  * @author Karim
  */
-public class UserDAO implements Serializable {
-    
+public class UtenteDAO implements Serializable {
+
     private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("MicroPU");
 
     public static EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
 
-    public static void create(User user) throws PreexistingEntityException, Exception {
+    public static void create(Utente user) throws PreexistingEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -49,7 +49,7 @@ public class UserDAO implements Serializable {
         }
     }
 
-    public static void edit(User user) throws NonexistentEntityException, Exception {
+    public static void edit(Utente user) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -77,9 +77,9 @@ public class UserDAO implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            User user;
+            Utente user;
             try {
-                user = em.getReference(User.class, id);
+                user = em.getReference(Utente.class, id);
                 user.getUsername();
             } catch (EntityNotFoundException enfe) {
                 throw new NonexistentEntityException("The user with id " + id + " no longer exists.", enfe);
@@ -93,19 +93,19 @@ public class UserDAO implements Serializable {
         }
     }
 
-    public static List<User> findUserEntities() {
+    public static List<Utente> findUserEntities() {
         return findUserEntities(true, -1, -1);
     }
 
-    public static List<User> findUserEntities(int maxResults, int firstResult) {
+    public static List<Utente> findUserEntities(int maxResults, int firstResult) {
         return findUserEntities(false, maxResults, firstResult);
     }
 
-    private static List<User> findUserEntities(boolean all, int maxResults, int firstResult) {
+    private static List<Utente> findUserEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(User.class));
+            cq.select(cq.from(Utente.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -117,10 +117,10 @@ public class UserDAO implements Serializable {
         }
     }
 
-    public static User findUser(String id) {
+    public static Utente findUser(String id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(User.class, id);
+            return em.find(Utente.class, id);
         } finally {
             em.close();
         }
@@ -130,7 +130,7 @@ public class UserDAO implements Serializable {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            Root<User> rt = cq.from(User.class);
+            Root<Utente> rt = cq.from(Utente.class);
             cq.select(em.getCriteriaBuilder().count(rt));
             Query q = em.createQuery(cq);
             return ((Long) q.getSingleResult()).intValue();

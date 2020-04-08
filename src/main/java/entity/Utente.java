@@ -14,7 +14,7 @@ import javax.persistence.*;
 
 
 @Entity
-public class User implements Serializable {
+public class Utente implements Serializable {
     
     @Id
     public String username;
@@ -29,7 +29,7 @@ public class User implements Serializable {
     public String salt;
     
     @Column(nullable = false)
-    public String ruolo = "USER";
+    public String ruolo = "UTENTE";
 
 
     public String getUsername() {
@@ -72,6 +72,5 @@ public class User implements Serializable {
         this.ruolo = ruolo;
     }
 
-    public User() {
-    }
+    
 }

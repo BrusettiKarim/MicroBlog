@@ -7,6 +7,7 @@ package Dao;
 
 import Dao.exceptions.NonexistentEntityException;
 import entity.Commento;
+import entity.Post;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -28,7 +29,7 @@ public class CommentoDAO implements Serializable {
     public static EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
-    
+
     public static void create(Commento commento) {
         EntityManager em = null;
         try {
@@ -132,5 +133,12 @@ public class CommentoDAO implements Serializable {
             em.close();
         }
     }
-}
 
+    public static List<Commento> findByPost(Post post) {
+        EntityManager em = getEntityManager();
+        List<Commento> commentoList = em.createQuery("SELECT c FROM BlogCommento c "
+                + "WHERE c.post = :p").setParameter("p", post).getResultList();
+
+        return commentoList;
+    }
+}

@@ -5,16 +5,23 @@
  */
 package servlet;
 
-import Dao.UserDAO;
-import entity.User;
+import Dao.UtenteDAO;
+import com.google.common.base.Charsets;
+import com.google.common.hash.*;
+import entity.Utente;
 import java.io.IOException;
+import com.google.common.hash.Hasher;
 import java.io.PrintWriter;
+import java.security.SecureRandom;
+import java.util.Random;
 import java.util.logging.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.bind.DatatypeConverter;
+
 
 /**
  *
@@ -34,18 +41,28 @@ public class RegistrazioneServlet extends HttpServlet {
             String password = request.getParameter("password");
             
             
-            User u = new User();
-            u.setUsername(name);
-            u.setPassword(password);
-            u.setEmail(email);
-            u.setSalt("udhaiuadhiahidhhiuadhiua");
-            UserDAO.create(u);
+            Random random = new SecureRandom();
+            byte[] saltByte = new byte[16];
+            random.nextBytes(saltByte);
             
+            String salt = DatatypeConverter.printBase64Binary(saltByte);
+            
+            String PasswordSalt = password + salt;
+            
+            Hasher hasher = Hashing.sha256().newHasher();
+            hasher.putString(PasswordSalt, Charsets.UTF_8);
+            String sha256 = hasher.hash().toString();
+            
+            Utente u = new Utente();
+            u.setUsername(name);
+            u.setPassword(sha256);
+            u.setSalt(salt);
+            u.setEmail(email);
+            UtenteDAO.create(u);
+
         } catch (Exception ex) {
             Logger.getLogger(RegistrazioneServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
 
-        }
+    }
 }
-
