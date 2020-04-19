@@ -136,7 +136,7 @@ public class CommentoDAO implements Serializable {
 
     public static List<Commento> findByPost(Post post) {
         EntityManager em = getEntityManager();
-        List<Commento> commentoList = em.createQuery("SELECT c FROM BlogCommento c "
+        List<Commento> commentoList = em.createQuery("SELECT c FROM Commento c "
                 + "WHERE c.post = :p").setParameter("p", post).getResultList();
 
         return commentoList;

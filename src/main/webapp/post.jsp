@@ -22,6 +22,21 @@
                     <p class="card-text"> <% out.print(p.getContenuto()); %></p>
                      <h4>Commenti</h4>
                      
+                     <div>
+                         <% List<Commento> commentiList = (List<Commento>) CommentoDAO.findByPost(p);%>
+                        <% for (int j = 0; j < commentiList.size(); j++) { %>
+                        <% Commento c = commentiList.get(j); %>
+                        <div class="commento">
+                            <p> <% out.print(c.getUtente().getUsername() + " " + c.getDataOra().toString()); %></p>
+                            <p> <% out.print(c.getContenuto()); %></p>
+                     </div>
+                      <% } %>
+                      <form action="CommentoServlet">
+                         <% long postId = p.getId();%>
+                        <input type="hidden" name="postId" value="<%=postId%>">
+                        <button class="btn btn-light btn-lg" type="submit" style="background-color: rgb(875, 145, 69);">Commenta</button>
+                      </form>
+                </div>
         </div>
                    
           <% }%>
