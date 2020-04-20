@@ -41,7 +41,6 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("username", name);
             request.setAttribute("username", name);
-            request.getRequestDispatcher("ProfileServlet").include(request, response);
             
         } else {
             out.print("Sorry, username or password error!");

@@ -3,15 +3,11 @@ Dao\exceptions\IllegalOrphanException.class
 Dao\exceptions\NonexistentEntityException.class
 entity\Commento.class
 entity\Post_.class
-Dao\UserDAO.class
 servlet\RegistrazioneServlet.class
 entity\Commento_.class
-entity\User_.class
 servlet\LoginServlet.class
 Dao\exceptions\PreexistingEntityException.class
 Dao\PostDAO.class
-entity\User.class
 servlet\ProfileServlet.class
 Dao\CommentoDAO.class
 entity\Post.class
-servlet\PostServlet.class

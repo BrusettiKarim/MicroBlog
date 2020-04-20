@@ -19,16 +19,12 @@ import javax.servlet.http.HttpServletResponse;
  * @author Karim
  */
 public class addPost extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        
         if (request.getSession(false) != null) {
             String username = (String)request.getSession(false).getAttribute("username"); 
             Utente u = UtenteDAO.findUser(username);
-            
             if (u.getRuolo().equals("ADMIN")) {
             request.getRequestDispatcher("addpost.html").include(request, response);
             }

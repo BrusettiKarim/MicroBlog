@@ -29,7 +29,6 @@ public class SavePost extends HttpServlet {
     protected void doPost (HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        
         String titolo = request.getParameter("titolo");
         String testo = request.getParameter("post");
         String username = (String) request.getSession(false).getAttribute("username");

@@ -1,22 +1,69 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>POST</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>
-            <br><h3>posta qui quello che vuoi!</h3>
-            <form action="SavePost" method="POST">
-                <p>Inserisci il titolo    
-                    <input type="text" name="titolo">
-                </p>
-                <p>Inserisci il post    
-                    <input type="text-area" name="post" placeholder="Inserisci il testo...">
-                </p>
-                <input type="submit" name="Salva">
-            </form>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>MicroBlog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-v2-Modal--Full-with-Google-Map.css">
+    <link rel="stylesheet" href="assets/css/dh-navbar-centered-brand.css">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md">
+        <div class="container-fluid"><a class="navbar-brand navbar-brand-centered" href="index.html"> <img src="assets/img/dh.png" class="nav-link" style="max-height:65px;" imgsrc="&quot;mb.png&quot;" href="index.html"></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1"><a href="#" class="nav-link" style="background-color: rgb(0,123,255);color: rgb(255,255,255);">Post</a>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="post.jsp">Visualizza Post</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a></li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#"></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="login.html">Login</a></li>
+                </ul><a href="registrazione.html" class="nav-link" style="background-color: rgb(0,123,255);color: rgb(255,255,255);">Registrazione</a></div>
         </div>
-    </body>
+    </nav>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr></tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <div class="container-fluid">
+            <h1>Inserisci Post</h1>
+            <hr>
+                <div class="form-row">
+                    <div class="col-12 col-md-6 col-xl-8 offset-xl-2" id="message">
+                        <form action="SavePost" method="post">                                
+                        <div class="form-group"><label for="from-name">Titolo</label><span class="required-input">*</span>
+                            <div class="input-group">
+                            <div class="input-group-prepend"></div><input class="form-control" type="text" name="titolo" required="" placeholder="Titolo" id="from-name"></div>
+                        </div>
+                        <div class="form-group"><label for="from-comments">Post<span class="required-input">*</span></label><textarea class="form-control" rows="5" name="post" placeholder="Inserisci il testo..." id="from-comments"></textarea></div>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col"><button class="btn btn-primary btn-block" type="submit" name="Salva">Invia&nbsp;<i class="fa fa-chevron-circle-right"></i></button></div>
+                            </div>
+                        </div>
+                        <hr class="d-flex d-md-none">
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/Contact-Form-v2-Modal--Full-with-Google-Map.js"></script>
+    <script src="assets/js/Sample---How-to-change-text-based-on-dropdown.js"></script>
+</body>
+
 </html>

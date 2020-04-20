@@ -20,6 +20,22 @@
         <servlet-name>RegistrazioneServlet</servlet-name>
         <servlet-class>servlet.RegistrazioneServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>addPost</servlet-name>
+        <servlet-class>servlet.addPost</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SavePost</servlet-name>
+        <servlet-class>servlet.SavePost</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CommentoServlet</servlet-name>
+        <servlet-class>servlet.CommentoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SaveCommento</servlet-name>
+        <servlet-class>servlet.SaveCommento</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -39,6 +55,22 @@
     <servlet-mapping>
         <servlet-name>RegistrazioneServlet</servlet-name>
         <url-pattern>/RegistrazioneServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addPost</servlet-name>
+        <url-pattern>/addPost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SavePost</servlet-name>
+        <url-pattern>/SavePost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CommentoServlet</servlet-name>
+        <url-pattern>/CommentoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SaveCommento</servlet-name>
+        <url-pattern>/SaveCommento</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
